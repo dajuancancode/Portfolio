@@ -3,10 +3,10 @@ import styled from 'styled-components'
 
 const Navbar = () => {
     const Header = styled.header`
-    display: flex;
-    justify-content: space-between;
-    width: 75%
-    margin: 0 auto
+    display: grid;
+    gap: 16px;
+    grid-template-columns: repeat(12, 120px, [col-start]);
+    margin 0 140px 0;
     `;
 
     const Title = styled.h1`
@@ -14,12 +14,20 @@ const Navbar = () => {
     font-family: 'Lato';
     font-weight: 900;
     color: #484343;
+    grid-column-start: 1;
+    grid-column-end: 2;
     `;
     
     const Accent = styled.span`
     font-size: 1em;
     padding: 0 0.1em 0;
     color: #0FB5B2;
+    `;
+
+    const Nav = styled.nav`
+    grid-column-start: 9;
+    grid-column-end: 12;
+    justify-self: end;
     `;
 
     const Navbar = styled.ul`
@@ -34,19 +42,23 @@ const Navbar = () => {
     color: #000;
     padding: 0.5em;
     `;
+
+    const NavLink = styled.a`
+    text-decoration: none;
+    `;
     
     return(
         <Header>
             <Title>DaJuan<Accent>&amp;&amp;</Accent>CanCode</Title>
-            <nav>
+            <Nav>
                 <Navbar>
-                    <NavItem>Home</NavItem>
-                    <NavItem>About</NavItem>
-                    <NavItem>Projects</NavItem>
-                    <NavItem>Contact</NavItem>
-                    <NavItem>Blog</NavItem>       
+                    <NavItem><NavLink href="#">Home</NavLink></NavItem>
+                    <NavItem><NavLink href="#">About</NavLink></NavItem>
+                    <NavItem><NavLink href="#">Projects</NavLink></NavItem>
+                    <NavItem><NavLink href="#">Contact</NavLink></NavItem>
+                    <NavItem><NavLink href="#">Blog</NavLink></NavItem>       
                 </Navbar>
-            </nav>
+            </Nav>
         </Header>
     );
 

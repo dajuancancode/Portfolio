@@ -5,10 +5,13 @@ const Content = () => {
 
     const Wrapper = styled.section`
     display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    grid-template-rows(3, auto);
+    grid-template-columns: auto;
+    grid-template-rows: repeat(3, 3em);
     gap: 16px 10px;
-    margin: 0 140px 0;
+    grid-area: main;
+    margin-left: 140px;
+    justify-self: center;
+    align-self: center;
     `;
 
     const LineOne = styled.h1`
@@ -21,7 +24,6 @@ const Content = () => {
     `;
     const LineTwo= styled.h1`
     grid-column-start: 1;
-    grid-column-end: 4;
     grid-row-start: 2;
     font-family: 'Lato';
     font-size: 3em;
@@ -29,7 +31,6 @@ const Content = () => {
     `;
     const LineThree = styled.h1`
     grid-column-start: 1;
-    grid-column-end: 6;
     grid-row-start: 3;
     font-family: 'Lato';
     font-size: 3em;

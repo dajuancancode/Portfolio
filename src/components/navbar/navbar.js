@@ -5,8 +5,11 @@ const Navbar = () => {
     const Header = styled.header`
     display: grid;
     gap: 16px;
-    grid-template-columns: repeat(12, 120px, [col-start]);
+    grid-template-columns: repeat(12, auto, [col-start]);
     margin 0 140px 0;
+    align-self: center;
+    grid-area: header;
+    z-index: 5;
     `;
 
     const Title = styled.h1`
@@ -28,6 +31,7 @@ const Navbar = () => {
     grid-column-start: 9;
     grid-column-end: 12;
     justify-self: end;
+    color: #FDFDFD;
     `;
 
     const Navbar = styled.ul`
@@ -37,14 +41,14 @@ const Navbar = () => {
 
     const NavItem = styled.li`
     font-family: 'Lato';
-    font-size: 1em;
+    font-size: 1.2em;
     font-weight: 300;
-    color: #000;
     padding: 0.5em;
     `;
 
     const NavLink = styled.a`
     text-decoration: none;
+    color: #FDFDFD
     `;
     
     return(

@@ -5,43 +5,60 @@ const Content = () => {
 
     const Wrapper = styled.section`
     display: grid;
-    grid-template-columns: auto;
-    grid-template-rows: repeat(3, 3em);
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, 1fr);
     gap: 16px 10px;
-    grid-area: main;
-    margin-left: 140px;
-    justify-self: center;
-    align-self: center;
+    grid-area: 3 / 2 / 4 / 7;
+
+    @media (max-width: 575px) {
+        z-index: 5;
+        grid-area: 3 / 2 / 4 / 12;
+    }
+
+    @media (min-width: 576px) and (max-width: 769px) {
+        z-index: 5;
+        grid-area: 3 / 3 / 4 / 11;
+        /*grid-template-rows: repeat(3, 2em);*/
+    }
+
+    @media (min-width: 770px) and (max-width: 992px) {
+        z-index: 5;
+        grid-area: 3 / 2 / 4 / 7;
+    }
+
     `;
 
-    const LineOne = styled.h1`
-    grid-column-start: 1;
-    grid-column-end: 3;
-    grid-row-start: 1;
+    const Headding = styled.h1`
     font-family: 'Lato';
-    font-size: 3em;
-    font-weight: 300;
-    `;
-    const LineTwo= styled.h1`
-    grid-column-start: 1;
-    grid-row-start: 2;
-    font-family: 'Lato';
-    font-size: 3em;
+    font-size: 2.5em;
     font-weight: 400;
+    color: #484343;
+
+    @media (max-width: 575px) {
+        font-size: 1.7em;
+    }
+
+    @media (min-width: 576px) and (max-width: 769px) {
+        font-size: 2em;
+    }
+
+    @media (min-width: 770px) and (max-width: 992px) {
+        font-size: 2em;
+    }
+
+    
     `;
-    const LineThree = styled.h1`
-    grid-column-start: 1;
-    grid-row-start: 3;
-    font-family: 'Lato';
-    font-size: 3em;
-    font-weight: 900;
+    
+    const Accent = styled.span`
+    font-size: 1em;
+    color: #0FB5B2;
     `;
 
     return (
         <Wrapper>
-            <LineOne>Hey there 👋 </LineOne>
-            <LineTwo>I’m DaJuan Harris</LineTwo>
-            <LineThree>A Full Stack Developer</LineThree>
+            <Headding>Hey there <span role="img" aria-label="Wave emoji">👋</span></Headding>
+            <Headding>I’m DaJuan Harris</Headding>
+            <Headding>A <Accent>Full Stack Developer</Accent></Headding>
         </Wrapper>
     )
 

@@ -5,11 +5,28 @@ const Navbar = () => {
     const Header = styled.header`
     display: grid;
     gap: 16px;
-    grid-template-columns: repeat(12, auto, [col-start]);
-    margin 0 140px 0;
-    align-self: center;
-    grid-area: header;
+    grid-template-columns: repeat(12, 1fr);
+    align-self: start;
+    grid-area: 1 / 2 / 1 / 13;
     z-index: 5;
+
+    @media (max-width: 575px) {
+        grid-area: 1 / 1 / 2/ 13;
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows repeat(2, 1fr);
+    }
+    
+
+    @media (min-width: 576px) and (max-width: 769px) {
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows repeat(2, 1fr);
+        grid-area: 1 / 2 / 2 / 12;
+        margin: 0;
+    }
+
+    @media (min-width: 770px) and (max-width: 992px) {
+        
+    }
     `;
 
     const Title = styled.h1`
@@ -18,7 +35,17 @@ const Navbar = () => {
     font-weight: 900;
     color: #484343;
     grid-column-start: 1;
-    grid-column-end: 2;
+
+    @media (min-width: 320px) and (max-width: 769px) {
+        grid-area: 1 /1;
+        justify-self: center;
+        font-size: 1.5em;
+    }
+
+    @media (min-width: 770px) and (max-width: 992px) {
+        font-size: 1.7em;
+        align-self: center;
+    }
     `;
     
     const Accent = styled.span`
@@ -28,10 +55,14 @@ const Navbar = () => {
     `;
 
     const Nav = styled.nav`
-    grid-column-start: 9;
-    grid-column-end: 12;
+    grid-area: 1 / 9 / 1 / 12
     justify-self: end;
     color: #FDFDFD;
+
+    @media (min-width: 320px) and (max-width: 769px) {
+        grid-area: 2/1;
+        justify-self: center;
+    }
     `;
 
     const Navbar = styled.ul`
@@ -44,11 +75,24 @@ const Navbar = () => {
     font-size: 1.2em;
     font-weight: 300;
     padding: 0.5em;
+
+    @media (min-width: 320px) and (max-width: 769px) {
+        padding: 0.3em;
+    }
+
+    @media (min-width: 320px) and (max-width: 769px) {
+        padding: 0.3em;
+    }
+
     `;
 
     const NavLink = styled.a`
     text-decoration: none;
-    color: #FDFDFD
+    color: #484343
+
+    &:hover {
+        border-bottom: 5px solid #0FB5B2
+    }
     `;
     
     return(

@@ -31,7 +31,7 @@ const Content = () => {
     const Headding = styled.h1`
     font-family: 'Lato';
     font-size: 2.5em;
-    font-weight: 400;
+    font-weight: 900;
     color: #484343;
 
     @media (max-width: 575px) {

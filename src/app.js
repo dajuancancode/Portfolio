@@ -1,10 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import Navbar from '../navbar/navbar'
-import Content from '../content/content'
+import { Header } from './components/header'
+import Content from './components/content'
 
-import BG from '../../assets/bg3.jpg';
+import BG from './assets/bg3.jpg';
 
 const App = () => {
     const Main = styled.section`
@@ -29,7 +29,7 @@ const App = () => {
 
     return(
         <Main>
-            <Navbar />
+            <Header />
             <Content />
             <Image src = {BG} />
         </Main>

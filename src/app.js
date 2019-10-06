@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import { Header } from './components/header'
-import Content from './components/content'
+import Header from './components/Header/Header'
+import Content from './components/Content/Content'
 
 import BG from './assets/bg@3x.png';
 
@@ -10,8 +10,7 @@ const App = () => {
 
     const Main = styled.section`
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(72px, 1fr))
-    grid-column-gap: 12px;
+    grid-template-columns: repeat(auto-fill, minmax(1fr, 72px));
     width: 100vw;
     height: 100vh;
     

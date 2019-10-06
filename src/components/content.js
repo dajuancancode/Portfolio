@@ -4,61 +4,46 @@ import styled from 'styled-components';
 const Content = () => {
 
     const Wrapper = styled.section`
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: repeat(3, 1fr);
-    gap: 16px 10px;
-    grid-area: 3 / 2 / 4 / 7;
+    display: flex;
+    flex-direction: column;
+    grid-area: 2 / 1 / 2 / 5;
+    margin: 0 5%;
+    z-index: 6;
 
-    @media (max-width: 575px) {
-        z-index: 5;
-        grid-area: 3 / 2 / 4 / 12;
+    h1 {
+        font-family: 'Lato';
+        font-size: 1.6em;
+        font-weight: 900;
+        color: #484343;
+        padding-bottom: 0.25em;
+
+        .accent {
+            color: #0FB5B2;
+        }
     }
 
-    @media (min-width: 576px) and (max-width: 769px) {
-        z-index: 5;
-        grid-area: 3 / 3 / 4 / 11;
-        /*grid-template-rows: repeat(3, 2em);*/
+    .light {
+        font-weight: 300;
+        padding-bottom
     }
 
-    @media (min-width: 770px) and (max-width: 992px) {
-        z-index: 5;
-        grid-area: 3 / 2 / 4 / 7;
+    .regular {
+        font-weight: 400
     }
 
-    `;
-
-    const Headding = styled.h1`
-    font-family: 'Lato';
-    font-size: 2.5em;
-    font-weight: 900;
-    color: #484343;
-
-    @media (max-width: 575px) {
-        font-size: 1.7em;
-    }
-
-    @media (min-width: 576px) and (max-width: 769px) {
-        font-size: 2em;
-    }
-
-    @media (min-width: 770px) and (max-width: 992px) {
-        font-size: 2em;
-    }
-
-    
-    `;
-    
-    const Accent = styled.span`
-    font-size: 1em;
-    color: #0FB5B2;
     `;
 
     return (
         <Wrapper>
-            <Headding>Hey there <span role="img" aria-label="Wave emoji">👋</span></Headding>
-            <Headding>I’m DaJuan Harris</Headding>
-            <Headding>A <Accent>Full Stack Developer</Accent></Headding>
+            <h1 className="light">
+                Hey there <span role="img" aria-label="Wave emoji">👋</span>
+            </h1>
+            <h1 className="regular">
+                I’m DaJuan Harris
+            </h1>
+            <h1>
+                A <span className="accent">Full Stack Developer</span>
+            </h1>
         </Wrapper>
     )
 

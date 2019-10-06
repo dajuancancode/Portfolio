@@ -1,46 +1,36 @@
-import React, {useState} from 'react';
+import React from 'react';
 import styled from 'styled-components';
 
 import { Header } from './components/header'
 import Content from './components/content'
 
-import BG from './assets/bg3.jpg';
+import BG from './assets/bg@3x.png';
 
 const App = () => {
 
-    const [menuToggle, setMenuToggle] = useState(false)
-
     const Main = styled.section`
     display: grid;
-    grid-template-columns: repeat(12, 1fr);
-    grid-template-rows: repeat(5, 1fr);
-    gap: 16px;
+    grid-template-columns: repeat(auto-fill, minmax(72px, 1fr))
+    grid-column-gap: 12px;
     width: 100vw;
     height: 100vh;
+    
+
+    .bgContainer {
+        grid-area: 1 / 1 / 3 /5;
+        height: 65%;
+        width: 100%;
+        background: no-repeat top/cover url(${BG});
+        clip-path: polygon(0 0, 100% 0%, 100% 100%);
+    }
+
     `;
-
-    const Image = styled.img`
-    height: 100%;
-    width: 100%;
-    grid-area: 1 / 7 / 6 / 13;
-
-
-    @media (min-width: 320px) and (max-width: 769px) {
-        grid-area 1 / 1 / 6/ 13;
-    }
-    `
-
-    const handleToggle = () => {
-        setMenuToggle(!menuToggle)
-    }
-
-    console.log(menuToggle)
 
     return(
         <Main>
-            <Header menuToggle = {menuToggle} handleToggle = {handleToggle}/>
+            <div className="bgContainer"></div>
+            <Header />
             <Content />
-            <Image src = {BG} />
         </Main>
     )
 }

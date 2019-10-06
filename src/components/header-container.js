@@ -10,14 +10,10 @@ export const HeaderContainer = styled.header`
 
     @media (max-width: 575px) {
         grid-area: 1 / 1 / 2/ 13;
-        grid-template-columns: repeat(1, 1fr);
-        grid-template-rows repeat(2, 1fr);
     }
     
 
     @media (min-width: 576px) and (max-width: 769px) {
-        grid-template-columns: repeat(1, 1fr);
-        grid-template-rows repeat(2, 1fr);
         grid-area: 1 / 2 / 2 / 12;
         margin: 0;
     }

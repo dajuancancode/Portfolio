@@ -1,21 +1,29 @@
 import React from 'react';
 
-import { Nav, NavItem, NavLink, Navbar  } from './navigation';
+
+
+import { Navbar  } from './navigation';
 import { Title, Accent } from './logo';
 import { HeaderContainer } from './header-container';
 
-export const Header = () => {
+export const Header = ({menuToggle, handleToggle}) => {
+
     return (
         <HeaderContainer>
             <Title>DaJuan<Accent>&amp;&amp;</Accent>CanCode</Title>
             <Navbar>
-                <Nav>
-                    <NavItem><NavLink>Home</NavLink></NavItem>
-                    <NavItem><NavLink>About</NavLink></NavItem>
-                    <NavItem><NavLink>Projects</NavLink></NavItem>
-                    <NavItem><NavLink>Contact</NavLink></NavItem>
-                    <NavItem><NavLink>Blog</NavLink></NavItem>
-                </Nav>
+                <button onClick = {handleToggle}>
+                    <div />
+                    <div />
+                    <div />
+                </button>
+                <ul menuToggle = {menuToggle}>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Skills</a></li>
+                    <li><a href="#">Projects</a></li>
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="#">Blog</a></li>
+                </ul>
             </Navbar>
         </HeaderContainer>
     )

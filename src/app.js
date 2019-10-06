@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import styled from 'styled-components';
 
 import { Header } from './components/header'
@@ -7,6 +7,9 @@ import Content from './components/content'
 import BG from './assets/bg3.jpg';
 
 const App = () => {
+
+    const [menuToggle, setMenuToggle] = useState(false)
+
     const Main = styled.section`
     display: grid;
     grid-template-columns: repeat(12, 1fr);
@@ -27,9 +30,15 @@ const App = () => {
     }
     `
 
+    const handleToggle = () => {
+        setMenuToggle(!menuToggle)
+    }
+
+    console.log(menuToggle)
+
     return(
         <Main>
-            <Header />
+            <Header menuToggle = {menuToggle} handleToggle = {handleToggle}/>
             <Content />
             <Image src = {BG} />
         </Main>

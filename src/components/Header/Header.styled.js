@@ -9,39 +9,39 @@ export const StyledHeader = styled.nav`
     justify-self: center;
     grid-area: 1 / 1 / 1 /5
     width: 85%;
-    padding: .5em 1em;
+    padding: .5rem 1rem;
     z-index: 6;
     position: relative;
 
     h1 {
         display: inline-block;
         padding-top: .3125rem;
-        padding-bottom: .3125em;
+        padding-bottom: .3125rem;
         margin-right: 1em;
-        font-size: 1.25em;
-        font-family: 'Lato';
-        font-weight: 900;
+        font-size: 1.8rem;
+        font-weight: 400;
         color: #FDFDFD;
 
         span {
-            font-size: 1em;
-            padding: 0 0.1em 0;
+            font-size: 1.8rem;
+            padding: 0 0.5rem 0;
             color: #484343;
         }
     }
 
     button {
         display: flex;
-        padding: .25em .75em;
-        font-size: 1em;
+        padding: .25rem .75rem;
+        font-size: 1.5rem;
         background-color: transparent;
         border: 1px solid transparent;
         border-radius: .25rem;
+        cursor: pointer;
             
         span {
             display: inline-block;
-            width: 1.5em;
-            height: 1.5em;
+            width: 2rem;
+            height: 2rem;
             background: no-repeat center center url(${menuBG});
             background-size: 100% 100%;
         }

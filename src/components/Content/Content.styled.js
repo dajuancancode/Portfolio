@@ -8,14 +8,13 @@ export const ContentStyled = styled.section`
     z-index: 6;
 
     h1 {
-        font-family: 'Lato';
-        font-size: 1.6em;
+        font-size: 2.6rem;
         font-weight: 900;
         color: #484343;
-        padding-bottom: 0.25em;
+        padding-bottom: 0.5rem;
 
         .accent {
-            color: #0FB5B2;
+            color: ${({ theme }) => theme.primaryAccent};
         }
     }
 

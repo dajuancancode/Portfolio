@@ -1,9 +1,9 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, { ThemeProvider} from 'styled-components';
+import { GlobalStyles } from './global'
+import { theme } from './theme'
 
-import Header from './components/Header/Header'
-import Content from './components/Content/Content'
-
+import {Header, Content} from './components'
 import BG from './assets/bg@3x.png';
 
 const App = () => {
@@ -26,11 +26,16 @@ const App = () => {
     `;
 
     return(
-        <Main>
-            <div className="bgContainer"></div>
-            <Header />
-            <Content />
-        </Main>
+        <ThemeProvider theme={theme}>
+            <>
+                <GlobalStyles />
+                <Main>
+                    <div className="bgContainer"></div>
+                    <Header />
+                    <Content />
+                </Main>
+            </>
+        </ThemeProvider>
     )
 }
 

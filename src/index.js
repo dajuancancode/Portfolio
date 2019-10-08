@@ -5,8 +5,6 @@ import App from './app';
 
 import WebFont from 'webfontloader';
 
-import './index.css'
-
 WebFont.load({
   google: {
     families: ['Lato:300,400,900', 'sans-serif']

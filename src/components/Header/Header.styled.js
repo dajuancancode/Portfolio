@@ -45,7 +45,7 @@ export const StyledHeader = styled.header`
             background-size: 100% 100%;
         }
 
-        @media(min-width: 768px) and (max-width: 991px) {
+        @media(min-width: 768px) {
             display: none;
         }
     }
@@ -80,10 +80,10 @@ export const StyledHeader = styled.header`
             }
         }
 
-        @media(min-width: 768px) and (max-width: 991px) {
+        @media(min-width: 768px) {
             visibility: visible
             background: transparent
-            flex-basis: 60%
+            flex-basis: 50%
             padding-top: .3125rem;
             padding-bottom: .3125rem;
             margin-right: 0.5rem;

@@ -12,11 +12,20 @@ const App = () => {
 
     const Main = styled.section`
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(72px, 1fr));
+    grid-template-columns: repeat(4, 1fr);
     grid-gap: 10px;
     width: 100vw;
     height: 100vh;
     
+    @media(min-width: 768px) and (max-width: 991px) {
+        grid-template-columns: repeat(8, 1fr);
+        grid-gap: 16px;
+    }
+
+    @media(min-width: 992px) {
+        grid-template-columns: repeat(12, 1fr);
+        grid-gap: 16px;
+    }
 
     .bgContainer {
         grid-area: 1 / 1 / 3 / -1;
@@ -27,7 +36,13 @@ const App = () => {
 
 
         @media(min-width: 768px) and (max-width: 991px) {
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+            grid-area 1 / 5 / 3 / -1;
+        }
 
+        @media(min-width: 992px) {
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+            grid-area 1 / 6 / 3 / -1;
         }
     }
 

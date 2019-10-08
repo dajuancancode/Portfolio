@@ -12,13 +12,14 @@ const App = () => {
 
     const Main = styled.section`
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(1fr, 72px));
+    grid-template-columns: repeat(auto-fill, minmax(72px, 1fr));
+    grid-gap: 10px;
     width: 100vw;
     height: 100vh;
     
 
     .bgContainer {
-        grid-area: 1 / 1 / 3 /5;
+        grid-area: 1 / 1 / 3 / -1;
         height: 100%;
         width: 100%;
         background: no-repeat top/cover url(${BG});
@@ -26,7 +27,7 @@ const App = () => {
     }
 
     `;
-    
+
     return(
         <ThemeProvider theme={theme}>
             <>

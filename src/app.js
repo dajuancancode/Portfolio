@@ -4,7 +4,7 @@ import { GlobalStyles } from './global'
 import { theme } from './theme'
 
 import {Header, Content} from './components'
-import BG from './assets/bg@3x.png';
+import BG from './assets/bg@767.png';
 
 const App = () => {
 
@@ -22,8 +22,13 @@ const App = () => {
         grid-area: 1 / 1 / 3 / -1;
         height: 100%;
         width: 100%;
-        background: no-repeat top/cover url(${BG});
+        background: ${({theme}) => theme.primaryAccent}
         clip-path: polygon(0 0, 100% 0, 100% 70%, 0 30%);
+
+
+        @media(min-width: 768px) and (max-width: 991px) {
+
+        }
     }
 
     `;

@@ -44,10 +44,13 @@ export const StyledHeader = styled.header`
             background: no-repeat center center url(${({open}) => open ? closeMenu : openMenu});
             background-size: 100% 100%;
         }
+
+        @media(min-width: 768px) and (max-width: 991px) {
+            display: none;
+        }
     }
 
     nav {
-        flex: 1;
         flex-basis: 100%
         height: 100%;
         display: block
@@ -72,6 +75,28 @@ export const StyledHeader = styled.header`
 
                     &:hover {
                         border-bottom: 0.2rem solid ${({theme}) => theme.primaryAccent}
+                    }
+                }
+            }
+        }
+
+        @media(min-width: 768px) and (max-width: 991px) {
+            visibility: visible
+            background: transparent
+            flex-basis: 60%
+            padding-top: .3125rem;
+            padding-bottom: .3125rem;
+            margin-right: 0.5rem;
+            border: none;
+            ul {
+                flex-direction: row;
+                justify-content: space-around;
+
+                li {
+                    font-size: 2rem;
+
+                    a {
+                        color: ${({theme}) => theme.primaryLight}
                     }
                 }
             }

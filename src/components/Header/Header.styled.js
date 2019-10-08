@@ -1,14 +1,14 @@
 import styled from 'styled-components';
 import menuBG from '../../assets/openMenu.svg'
 
-export const StyledHeader = styled.nav`
+export const StyledHeader = styled.header`
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     align-self: start;
     justify-self: center;
-    grid-area: 1 / 1 / 1 /5
     width: 85%;
+    grid-area: 1 / 1 / 1 /5
     padding: .5rem 1rem;
     z-index: 6;
     position: relative;
@@ -37,6 +37,7 @@ export const StyledHeader = styled.nav`
         border: 1px solid transparent;
         border-radius: .25rem;
         cursor: pointer;
+        border: ${({open}) => open ? '2px solid black': 'none'}
             
         span {
             display: inline-block;

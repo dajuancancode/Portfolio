@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import styled, { ThemeProvider} from 'styled-components';
 import { GlobalStyles } from './global'
 import { theme } from './theme'
@@ -7,6 +7,8 @@ import {Header, Content} from './components'
 import BG from './assets/bg@3x.png';
 
 const App = () => {
+
+    const [ open, setOpen] = useState(false)
 
     const Main = styled.section`
     display: grid;
@@ -17,13 +19,15 @@ const App = () => {
 
     .bgContainer {
         grid-area: 1 / 1 / 3 /5;
-        height: 65%;
+        height: 100%;
         width: 100%;
         background: no-repeat top/cover url(${BG});
-        clip-path: polygon(0 0, 100% 0%, 100% 100%);
+        clip-path: polygon(0 0, 100% 0, 100% 70%, 0 30%);
     }
 
     `;
+
+    console.log(open)
 
     return(
         <ThemeProvider theme={theme}>
@@ -31,7 +35,7 @@ const App = () => {
                 <GlobalStyles />
                 <Main>
                     <div className="bgContainer"></div>
-                    <Header />
+                    <Header open = {open} setOpen = {setOpen}/>
                     <Content />
                 </Main>
             </>

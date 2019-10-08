@@ -26,9 +26,7 @@ const App = () => {
     }
 
     `;
-
-    console.log(open)
-
+    
     return(
         <ThemeProvider theme={theme}>
             <>

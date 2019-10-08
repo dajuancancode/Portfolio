@@ -1,16 +1,15 @@
 import React from 'react';
 import { StyledHeader } from './Header.styled'
-import { StyledNav } from './Nav.styled'
 
-const Header = (props) => {
+const Header = ({open, setOpen}) => {
 
     return (
-        <StyledHeader>
+        <StyledHeader open = {open}>
             <h1>DaJuan<span>&amp;&amp;</span>CanCode</h1>
-            <button open = {props.open} onClick = {() => props.setOpen(!props.open)}>
+            <button onClick = {() => setOpen(!open)}>
                 <span></span>
             </button>
-            <StyledNav open={props.open}>
+            <nav>
                 <ul>
                     <li><a href="/">Home</a></li>
                     <li><a href="/">About</a></li>
@@ -18,7 +17,7 @@ const Header = (props) => {
                     <li><a href="/">Contact</a></li>
                     <li><a href="/">Blog</a></li>
                 </ul>
-            </StyledNav>
+            </nav>
         </StyledHeader>
     )
 

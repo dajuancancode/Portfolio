@@ -31,7 +31,7 @@ export const ContentStyled = styled.section`
 
     .light {
         font-weight: 300;
-        font-size: 2.5rem;
+        font-size: 2rem;
         line-height: 3.5rem;
 
         @media(min-width: 768px) {

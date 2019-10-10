@@ -15,6 +15,12 @@ export const GlobalStyles = createGlobalStyle`
 
     body {
         font-family: ${({theme}) => theme.primaryFont}
+        
+        #root {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(72px, 1fr));
+            grid-gap: 10px;
+        }
     }
 
 `;
